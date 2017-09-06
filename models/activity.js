@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var Activity = sequelize.define('Activity', {
     name: {type: DataTypes.STRING, allowNull: false},
     timesPerformed: DataTypes.INTEGER,
+    date: {type: DataTypes.DATE, allowNull: true},
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,

@@ -43,7 +43,10 @@ app.put('/api/activities/:id', passport.authenticate('basic', {session: false}),
 //delete an activity
 app.delete('/api/activities/:id', passport.authenticate('basic', {session: false}), ActivityController.delete);
 
+//Add tracked data for a day. The data sent with this should include the day tracked. You can also override the data for a day already recorded.
+app.post('/api/activities/:id/stats', passport.authenticate('basic', {session: false}), ActivityController.addStats);
 
-
+//Remove tracked data for a day
+app.delete('/api/stats/:id', passport.authenticate('basic', {session: false}), ActivityController.deleteStats); 
 
 app.listen(3000);
