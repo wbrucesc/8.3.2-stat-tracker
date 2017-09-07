@@ -47,6 +47,8 @@ app.delete('/api/activities/:id', passport.authenticate('basic', {session: false
 app.post('/api/activities/:id/stats', passport.authenticate('basic', {session: false}), ActivityController.addStats);
 
 //Remove tracked data for a day
-app.delete('/api/stats/:id', passport.authenticate('basic', {session: false}), ActivityController.deleteStats); 
+app.delete('/api/stats/:id', passport.authenticate('basic', {session: false}), ActivityController.deleteStats);
 
-app.listen(3000);
+
+
+app.listen(process.env.PORT || 3000);
